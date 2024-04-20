@@ -1,0 +1,16 @@
+.grey-bg {
+    background-color: #333333;
+}
+
+.main-box {
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}

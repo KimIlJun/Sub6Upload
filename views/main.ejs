@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="grey-bg">
+    <div class="main-box">
+        <h1>파일 업로드 하귀</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="excelFile" accept=".xlsx, .xls, .csv">
+            <button type="submit">업로드</button>
+        </form>
+    
+        <h1>ID값으로 데이터 찾깅</h1>
+        <form action="/search" method="post">
+            <label for="id">ID 값:</label>
+            <input type="text" id="id" name="id">
+            <button type="submit">찾기</button>
+        </form>
+        <h1>삭제할 데이터</h1>
+        <form action="/delete" method="post">
+            <label for="id">ID 값:</label>
+            <input type="text" id="id" name="id">
+            <button type="submit">지우깅</button>
+        </form>
+        <% if(data && data.length > 0) { %>
+            <h2>데이터 찾기:</h2>
+            <% data.forEach(item => { %>
+                <p>prefab_position_x: <%= item.prefab_position_x %></p>
+                <p>prefab_position_y: <%= item.prefab_position_y %></p>
+                <p>prefab_position_z: <%= item.prefab_position_z%></p>
+            <% }); %>
+        <% } else { %>
+            <p>데이터가 존재하지 않습니다.</p>
+        <% } %>
+    </div>
+</body>
+</html>
