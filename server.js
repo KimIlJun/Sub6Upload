@@ -69,6 +69,7 @@ app.post('/search', (req, res) => {
 
             if (results.length === 0) {
                 // ID에 해당하는 데이터가 없을 경우
+                console.log(results)
                 return res.render('main', { data: null });
             } else {
                 console.log(results)
